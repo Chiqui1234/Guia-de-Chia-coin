@@ -23,7 +23,9 @@ Abrí una ventana de Powershell (Windows) o terminal (Linux/Mac) y escribí el s
 
 ----------------------------------------------------------------------------------
 ### NOTA
+
 En Powershell es probable que tengas que anteponer **./**, antes de escribir "chia" y/o **.exe** después. También deberías añadir la carpeta raíz dónde está chia.exe a las *Variables de entorno* > **PATH**. Busca un tutorial de como agregar programas al PATH si no sabés como.
+
 ----------------------------------------------------------------------------------
 
 ## Entender los parámetros enviados a Chia
