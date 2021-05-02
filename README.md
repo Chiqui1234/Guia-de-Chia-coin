@@ -1,4 +1,7 @@
 # Guía de Chia coin
+
+Para instalar Chia (usable desde CLI) seguir [este tutorial](https://github.com/Chia-Network/chia-blockchain/wiki/INSTALL).
+
 ## Iniciar una cuenta nueva
 Una vez que instalás Chia en tu sistema operativo, ejecutá el comando
 
