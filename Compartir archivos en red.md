@@ -7,7 +7,7 @@ En mi sistema basado en Debian, hice:
 
 Una vez que tengas Samba (si te pregunta en tener compatibilidad con *WINS*, le das "Si" u "Ok"), deberás editar el archivo de configuración, dónde se especifica el grupo de trabajo, las carpetas a compartir, etc.
 
-> nano /etc/samba/smb.conf
+> sudo nano /etc/samba/smb.conf
 
 ## Cambiar el grupo de trabajo
 
