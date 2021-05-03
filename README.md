@@ -1,4 +1,4 @@
-# Guía de Chia coin
+# Guía de Chia coin (Linux)
 
 Para instalar Chia (usable desde CLI) seguir [este tutorial](https://github.com/Chia-Network/chia-blockchain/wiki/INSTALL).
 
