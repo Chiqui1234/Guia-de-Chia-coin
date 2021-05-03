@@ -1,4 +1,4 @@
-# Guía de Chia coin (Linux)
+# Guía de Chia coin (Linux/Mac/Windows)
 
 Para instalar Chia (usable desde CLI) para Linux/Mac, seguir [este tutorial](https://github.com/Chia-Network/chia-blockchain/wiki/INSTALL). En Windows, el instalador pondrá la interfaz visual y la versión de consola, todo-en-uno.
 
