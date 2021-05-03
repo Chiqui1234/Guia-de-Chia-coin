@@ -18,3 +18,5 @@ usb 3-4: SerialNumber: 1CBFCE803E64
 ```
 
 es muy pequeño y tiene el puerto USB en color rojo. Debian no trae un driver por defecto, pero podemos seguir las instrucciones [que se muestran acá](https://github.com/kelebek333/rtl8188fu).
+
+También puede ayudarte [este tutorial](https://vivaelsoftwarelibre.com/usar-la-wifi-con-realtek-semiconductor-802-11n-en-linux-mint/).
