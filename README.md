@@ -16,7 +16,7 @@ $ chia init # Crea una cuenta nueva
 2. Para Windows 10
 
 ```bash
-$ cd "C:\Users\[System.Security.Principal.WindowsIdentity]::GetCurrent().Name\AppData\Local\chia-blockchain\app-1.1.3\resources\app.asar.unpacked\daemon\"
+$ cd "C:\Users\tuUsuario\AppData\Local\chia-blockchain\app-1.1.3\resources\app.asar.unpacked\daemon\"
 ```
 
 ---------------------------------------------------------------
@@ -62,7 +62,7 @@ La ruta de Chia CLI en Windows es un tanto distinta, y el instalador de este SO 
 Primero nos dirijimos a la carpeta dónde está Chia CLI:
 
 ```bash
-$ cd "C:\Users\[System.Security.Principal.WindowsIdentity]::GetCurrent().Name\AppData\Local\chia-blockchain\app-1.1.3\resources\app.asar.unpacked\daemon\"
+$ cd "C:\Users\tuUsuario\AppData\Local\chia-blockchain\app-1.1.3\resources\app.asar.unpacked\daemon\"
 ```
 
 Revisar la parte dónde dice "app-1.1.3" y cambiarla por la versión que tengas instalada (hoy 03/05/2021, es la última disponible). Una vez allí, podemos correr el mismo comando en Linux, con una ligera diferencia: en PowerShell se anteponen los símbolos **./** antes de escribir "*chia*", así:
