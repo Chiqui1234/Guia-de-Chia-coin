@@ -25,9 +25,20 @@ Abrí una ventana de Powershell (Windows) o terminal (Linux/Mac) y escribí el s
 > chia plots create -k 32 -b 3390 -u 128 -r 2 -t /ruta/temporal -d /ruta/final -n 1 -f 99305144715663545df075d33322b313177fb41921746bbada3637912f6316ffbe3082bf1239f28d4eb8db80112b17f7 -p 82ae156f6c292e838da7324ed8f111ce904e66fed3478f3caa21a00113356e3ef7009d69d46c4e5348ef7d66ebaf23f5
 
 ----------------------------------------------------------------------------------
-### NOTA
+### NOTA 1 PARA WINDOWS
 
 En Powershell es probable que tengas que anteponer **./**, antes de escribir "chia" y/o **.exe** después. También deberías añadir la carpeta raíz dónde está chia.exe a las *Variables de entorno* > **PATH**. Busca un tutorial de como agregar programas al PATH si no sabés como.
+
+----------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------
+### NOTA 1 PARA LINUX
+
+En Linux debés ir a la carpeta dónde instalaste Chia y correr:
+
+> . ./activate
+
+Antes de ejecutar el comando que crea los plots.
 
 ----------------------------------------------------------------------------------
 
