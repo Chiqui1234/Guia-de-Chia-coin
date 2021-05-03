@@ -1,6 +1,6 @@
 1. Ingresá como **root**:
 
-> su -c
+> su -
 
 2. Instalá el paquete *sudo*:
 
