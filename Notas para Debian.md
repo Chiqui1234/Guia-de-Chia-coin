@@ -21,3 +21,16 @@ Se debe agregar:
 Dentro de las comillas del primer *PATH*.
 
 Cerrar la sesión, probar de nuevo ¡y voilá!
+
+### Por si no se entendió...
+
+Esa porción de código debería quedarte así:
+
+```bash
+if [ "`id -u`" -eq 0 ]; then
+  PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin:/usr/sbin:/usr/local/sbin"
+else
+  PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
+fi
+export PATH
+```
