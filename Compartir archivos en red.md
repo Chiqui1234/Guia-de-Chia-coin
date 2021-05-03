@@ -34,8 +34,10 @@ Te dejo una plantilla y algunos comentarios default, para que sepas como compart
 ```bash
 # Entre corchetes [] va el nombre de la carpeta, tal cuál se mostrará al entrar desde un Explorador de archivos a nuestra PC dónde instalamos Samba
 [Plots]
+path=/home/pc-florida3/chia-final
 browseable = yes
 read only = yes
+guest ok = yes # Esto permite que te puedas loguear como "anónimo" 
 # File creation mask is set to 0700 for security reasons. If you want to
 # create files with group=rw permissions, set next parameter to 0775.
 create mask = 0700
