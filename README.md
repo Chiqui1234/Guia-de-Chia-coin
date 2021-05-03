@@ -45,7 +45,7 @@ Gracias a Chia CLI, podemos crear plots afines a una cuenta en particular en una
 
 ## Generar plots compatibles con una misma cuenta Chia (Linux/Mac)
 
-Abrí una terminal (Linux/Mac) y escribí los siguientes comandos:
+Abrí una terminal (Linux/Mac) y escribí los siguientes comandos, teniendo en cuenta que si la ruta a una carpeta **contiene espacios**, debe ir **entre comillas**:
 
 ```bash
 $ cd /ruta/a/carpeta/de/chia-blockchain
@@ -59,7 +59,7 @@ $ chia plots create -k 32 -b 3390 -u 128 -r 2 -t /ruta/temporal -d /ruta/final -
 
 La ruta de Chia CLI en Windows es un tanto distinta, y el instalador de este SO trae Chia Electron (GUI) y Chia CLI (para ejecutar comandos en consola) todo-en-uno. A día de hoy, la herramienta en consola es mucho más estable y permite más opciones, como crear plots para una cuenta determinada sólo con su farmer y pool key. Esta característica es útil por si queremos crear plots para una cuenta propia y sin exponer nuestra *private key*.
 
-Primero nos dirijimos a la carpeta dónde está Chia CLI:
+Primero nos dirijimos a la carpeta dónde está Chia CLI, teniendo en cuenta que la ruta debe estar **entre comillas**:
 
 ```bash
 $ cd "C:\Users\tuUsuario\AppData\Local\chia-blockchain\app-1.1.3\resources\app.asar.unpacked\daemon\"
