@@ -49,7 +49,8 @@ Abrí una terminal (Linux/Mac) y escribí los siguientes comandos, teniendo en c
 
 ```bash
 $ cd /ruta/a/carpeta/de/chia-blockchain
-$ . ./activate
+$ chmod +x activate # Le damos permisos de ejecución
+$ . ./activate # Entramos al entorno virtual de Chia (Python)
 $ chia plots create -k 32 -b 3390 -u 128 -r 2 -t /ruta/temporal -d /ruta/final -n 1 -f 99305144715663545df075d33322b313177fb41921746bbada3637912f6316ffbe3082bf1239f28d4eb8db80112b17f7 -p 82ae156f6c292e838da7324ed8f111ce904e66fed3478f3caa21a00113356e3ef7009d69d46c4e5348ef7d66ebaf23f5
 ```
 
