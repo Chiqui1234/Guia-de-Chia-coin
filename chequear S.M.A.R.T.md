@@ -12,7 +12,7 @@ Después, con el siguiente comando verás todo el almacenamiento presente en tu 
 sudo fdisk -l
 ```
 
-## Activar S.M.A.R.T (opcional
+## Activar S.M.A.R.T (opcional)
 
 Puede suceder que *smartctl* indique que el acceso al chip S.M.A.R.T no sea posible desde Linux, pero puede probar activarse con:
 
