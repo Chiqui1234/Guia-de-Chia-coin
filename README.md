@@ -54,7 +54,15 @@ $ . ./activate # Entramos al entorno virtual de Chia (Python)
 $ chia plots create -k 32 -b 3390 -u 128 -r 2 -t /ruta/temporal -d /ruta/final -n 1 -f 99305144715663545df075d33322b313177fb41921746bbada3637912f6316ffbe3082bf1239f28d4eb8db80112b17f7 -p 82ae156f6c292e838da7324ed8f111ce904e66fed3478f3caa21a00113356e3ef7009d69d46c4e5348ef7d66ebaf23f5
 ```
 
-¡Bien! Ya está comenzando el proceso del plot.
+¡Bien! Ya está comenzando el proceso del plot. 
+
+------------------------------------
+
+### Edit 05/05/2021
+
+Quizá te interese revisar [este link](https://github.com/Chiqui1234/Guia-de-Chia-coin/blob/main/Crear%20plot%20(V2).md) con el script perfeccionado, ya que en la versión actual de Chia (05/05/2021) no se borran viejos archivos temporales, y hay que hacerlo de forma manual para evitar el error "Only wrote [...] bytes at offset XXXXXX. Error 1. Trying in five minutes".
+
+------------------------------------
 
 ## Generar plots compatibles con una misma cuenta Chia (Windows)
 
