@@ -3,7 +3,7 @@
 Con el objetivo de tener plots en una máquina que se use como NAS, debemos instalar **Samba** para poder compartir las carpetas dónde se alojan los plots creados.
 En mi sistema basado en Debian, hice:
 
-> sudo apt-get install samba smbfs
+> sudo apt-get install samba
 
 Una vez que tengas Samba (si te pregunta en tener compatibilidad con *WINS*, le das "Si" u "Ok"), deberás editar el archivo de configuración, dónde se especifica el grupo de trabajo, las carpetas a compartir, etc.
 
