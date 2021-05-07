@@ -54,9 +54,7 @@ $ . ./activate # Entramos al entorno virtual de Chia (Python)
 $ chia plots create -k 32 -b 3390 -u 128 -r 2 -t /ruta/temporal -d /ruta/final -n 1 -f 99305144715663545df075d33322b313177fb41921746bbada3637912f6316ffbe3082bf1239f28d4eb8db80112b17f7 -p 82ae156f6c292e838da7324ed8f111ce904e66fed3478f3caa21a00113356e3ef7009d69d46c4e5348ef7d66ebaf23f5
 ```
 
-¡Bien! Ya está comenzando el proceso del plot. Dependiendo de la RAM y cantidad de plots que quieras hacer en paralelo, podrías cambiar la RAM por plot (valor luego de **-b**) y los hilos a usar de tu procesador (valor luego de **-r**). Por ejemplo, tengo un Ryzen 5 1600 (6 núcleos, 12 hilos) con 16GB y dos HDDs. Lo ideal acá es poner 6GB por plot, es decir, **-b 6144** (6144MB son 6GB). 
-
-Así, tendrías hasta 12GB ocupados por ambos plots y 4GB por el sistema. Si tenés Linux sin interfaz gráfica, posiblemente el sistema consuma < 200MB, por lo cuál podés poner 6,5 o 7GB por plot si la PC no está haciendo otra cosa más que "plottear".
+¡Bien! Ya está comenzando el proceso del plot.
 
 ------------------------------------
 
@@ -85,7 +83,14 @@ $ ./chia plots create -k 32 -b 3390 -u 128 -r 2 -t /ruta/temporal -d /ruta/final
 ¡Bien! Ya está comenzando el proceso del plot.
 
 ## Entender los parámetros enviados a Chia
-**plots create** es la llamada a una función interna de la wallet Chia, que se encarga de crear plots. Los parámetros *-k*, *-b*, *-u* y *-r* te recomiendo no tocarlos a pesar de que tengas una PC "ploteadora" muy potente. Añadir más threads de procesamiento (aumentando el valor que le sigue a *-r* no aumentó la velocidad al crear plots. De hecho, más de 4 threads lo empeora.
+**plots create** es la llamada a una función interna de la wallet Chia, que se encarga de crear plots.
+
+Dependiendo de la RAM y cantidad de plots que quieras hacer en paralelo, podrías cambiar la RAM por plot (valor luego de **-b**) y los hilos a usar de tu procesador (valor luego de **-r**). Por ejemplo, tengo un Ryzen 5 1600 (6 núcleos, 12 hilos) con 16GB y dos HDDs. Lo ideal acá es poner 6GB por plot, es decir, **-b 6144** (6144MB son 6GB). Hago dos instancias de Chia, y fijo HDD1 para el temporal y final, y hago lo mismo con mi HDD2.
+
+Así, tendrías hasta 12GB ocupados por ambos plots y 4GB por el sistema. Si tenés Linux sin interfaz gráfica, posiblemente el sistema consuma < 200MB, por lo cuál podés poner 6,5 o 7GB por plot si la PC no está haciendo otra cosa más que "plottear".
+
+Estoy teniendo malas experiencias con los NVME, en mayor parte porque hacen throttling y el rendimiento no es el anunciado, salvo que mejores la disipación notablemente y aún así no mejora del todo. Mi idea actual es tener muchos discos rígidos para hacer plotting ahí, un plot a la vez por cada disco. De esta forma, si tenés muchos discos podés hacer plots en cada uno. Aumentar el uso de RAM con el parámetro **-b** me ayudó a mejorar el tiempo por plot en al menos 15%.
+
 Para saber en detalle qué hacen los parámetros *-t*, *-d*, *-n*, *-f* y *-p*, escribí el comando **chia plots create -h**, pero el valor que le sigue a la -f es tu *farmer key*; mientras que el valor que le sigue a -p es tu *pool key*. Reemplazando estos dos últimos valores por tu farmer y pool key, podrás plotear para tu cuenta sin problema.
 
 Una vez ejecutado el comando del título "Generar plots compatibles con una cuenta Chia" ([Linux/Mac](https://github.com/Chiqui1234/Guia-de-Chia-coin/#generar-plots-compatibles-con-una-misma-cuenta-chia-linuxmac), [Windows](https://github.com/Chiqui1234/Guia-de-Chia-coin/#generar-plots-compatibles-con-una-misma-cuenta-chia-windows)), verás que Chia comienza a informarte qué está haciendo, del mismo modo que en la GUI podemos "Ver el log" del plot en procesamiento.
