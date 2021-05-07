@@ -88,10 +88,11 @@ $ ./chia plots create -k 32 -b 3390 -u 128 -r 2 -t /ruta/temporal -d /ruta/final
 **plots create** es la llamada a una función interna de la wallet Chia, que se encarga de crear plots. Los parámetros *-k*, *-b*, *-u* y *-r* te recomiendo no tocarlos a pesar de que tengas una PC "ploteadora" muy potente. Añadir más threads de procesamiento (aumentando el valor que le sigue a *-r* no aumentó la velocidad al crear plots. De hecho, más de 4 threads lo empeora.
 Para saber en detalle qué hacen los parámetros *-t*, *-d*, *-n*, *-f* y *-p*, escribí el comando **chia plots create -h**, pero el valor que le sigue a la -f es tu *farmer key*; mientras que el valor que le sigue a -p es tu *pool key*. Reemplazando estos dos últimos valores por tu farmer y pool key, podrás plotear para tu cuenta sin problema.
 
-Una vez ejecutado el comando del título "Generar plots compatibles con una cuenta Chia", verás que Chia comienza a informarte qué está haciendo, del mismo modo que en la GUI podemos "Ver el log" del plot en procesamiento.
+Una vez ejecutado el comando del título "Generar plots compatibles con una cuenta Chia" ([Linux/Mac](https://github.com/Chiqui1234/Guia-de-Chia-coin/#generar-plots-compatibles-con-una-misma-cuenta-chia-linuxmac), [Windows](https://github.com/Chiqui1234/Guia-de-Chia-coin/#generar-plots-compatibles-con-una-misma-cuenta-chia-windows)), verás que Chia comienza a informarte qué está haciendo, del mismo modo que en la GUI podemos "Ver el log" del plot en procesamiento.
 
 
 # Donaciones
 
 BTC (BTC) 1N9EFgsoALg6TwoA9rHg3E3oY1ZZp68yQw
+
 BUSD (BEP20/BSC) 0x4d4b0056edc724c72920339a2bdde57154ae059b
