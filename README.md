@@ -10,7 +10,7 @@ Una vez que instalás Chia en tu sistema operativo, ejecutá el comando.
 ```bash
 $ cd /ruta/a/carpeta/de/chia-blockchain
 $ . ./activate # Inicia el entorno de Chia
-$ chia init # Crea una cuenta nueva
+$ chia init # Inicia archivos básicos para Chia y creo que genera una nueva cuenta (chequear)
 ```
 
 2. Para Windows 10
@@ -54,13 +54,15 @@ $ . ./activate # Entramos al entorno virtual de Chia (Python)
 $ chia plots create -k 32 -b 3390 -u 128 -r 2 -t /ruta/temporal -d /ruta/final -n 1 -f 99305144715663545df075d33322b313177fb41921746bbada3637912f6316ffbe3082bf1239f28d4eb8db80112b17f7 -p 82ae156f6c292e838da7324ed8f111ce904e66fed3478f3caa21a00113356e3ef7009d69d46c4e5348ef7d66ebaf23f5
 ```
 
-¡Bien! Ya está comenzando el proceso del plot. 
+¡Bien! Ya está comenzando el proceso del plot. Dependiendo de la RAM y cantidad de plots que quieras hacer en paralelo, podrías cambiar la RAM por plot (valor luego de **-b**) y los hilos a usar de tu procesador (valor luego de **-r**). Por ejemplo, tengo un Ryzen 5 1600 (6 núcleos, 12 hilos) con 16GB y dos HDDs. Lo ideal acá es poner 6GB por plot, es decir, **-b 6144** (6144MB son 6GB). 
+
+Así, tendrías hasta 12GB ocupados por ambos plots y 4GB por el sistema. Si tenés Linux sin interfaz gráfica, posiblemente el sistema consuma < 200MB, por lo cuál podés poner 6,5 o 7GB por plot si la PC no está haciendo otra cosa más que "plottear".
 
 ------------------------------------
 
 ### Edit 05/05/2021
 
-Quizá te interese revisar [este link](https://github.com/Chiqui1234/Guia-de-Chia-coin/blob/main/Crear%20plot%20(V2).md) con el script perfeccionado, ya que en la versión actual de Chia (05/05/2021) no se borran viejos archivos temporales, y hay que hacerlo de forma manual para evitar el error "Only wrote [...] bytes at offset XXXXXX. Error 1. Trying in five minutes".
+Quizá te interese revisar [este link](https://github.com/Chiqui1234/Guia-de-Chia-coin/blob/main/Crear%20plot%20(V2).md) con el script perfeccionado, ya que en la versión actual de Chia (05/05/2021) no se borran viejos archivos temporales cuándo un plot anterior falla, y hay que hacerlo de forma manual para evitar el error "Only wrote [...] bytes at offset XXXXXX. Error 1. Trying in five minutes".
 
 ------------------------------------
 
