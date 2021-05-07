@@ -20,18 +20,13 @@ Para evitar este error frustrante y lograr un plotteo desatendido, dejo este scr
 # $3 cantidad de plots
 # -b -> 3390MB ram por defecto
 # -r 2 (threads) por defecto
-createPlot ()
-{
+while :
+do
         echo "Borrando $1..."
         sleep 5
         rm -R $1/*
         echo "Comando 'rm' ejecutado"
-        chia plots create -k 32 -b 5120 -u 128 -r 4 -t $1 -d $2 -n 1 -f tuFarmerKey -p tuPlotKey
-}
-# Bucle infinito
-while :
-do
-        createPlot
+        chia plots create -k 32 -b 7168 -u 128 -r 4 -t $1 -d $2 -n 1 -f tuFarmerKey -p tuPoolKey
 done
 ```
 
