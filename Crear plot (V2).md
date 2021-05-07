@@ -1,24 +1,48 @@
 # Crear un plot
 ## La forma correcta v2
 
-Al menos en mi caso, cada plot no borra sus archivos temporales al finalizar. Esto ocasiona que, a mitad del plot siguiente (fase 2 de 4, probablemente) te quedes sin espacio en tu NVME de 512GB.
-Claramente el momento en dónde salga el Error 1 "trying in five minutes" dependerá del tamaño de tu HDD/SSD/NVME. Este error dice que escribió unos bytes pero no pudo escribirlos todos, entonces intentará más tarde.
-Para evitar este error frustrante y lograr un plotteo desatendido, dejo este script **createPlot** que pueden usar dentro de su carpeta *Chia CLI*.
+Si un plot o Chia tuvieron un error, no se borrarán los archivos temporales. Esto ocasiona que, a mitad del plot siguiente (fase 2 de 4, probablemente) te quedes sin espacio en tu NVME de 512GB (por ejemplo).
+
+Claramente el momento en dónde salga el Error 1 "trying in five minutes" dependerá del tamaño de tu HDD/SSD/NVME. Este error dice que escribió unos bytes pero no pudo escribirlos todos, entonces intentará más tarde. 
+
+---------------------------------------------
+
+## Edit 07/05/2021
+Algunos NVME no están diseñados para ser escritos por tanto tiempo. Ya sea porque no son SSDs para entornos empresariales y/o porque la temperatura de los chips sube mucho. Esto también puede generar el "Error 1" del cuál hablaba antes.
+
+---------------------------------------------
+
+Para evitar este error frustrante y lograr un plotteo desatendido, dejo este script **createPlot** que pueden usar dentro de su carpeta *Chia CLI* y en bucle. Por el momento
 
 ```bash
-echo "Eliminando archivos temporales en la carpeta '$1/*'..."
-sleep 5
-rm -R $1/*
-echo "Comando 'rm' ejecutado"
-chia plots create -k 32 -b 3390 -u 128 -r 2 -t $1 -d $2 -n 1 -f 99305144715663545df075d33322b313177fb41921746bbada3637912f6316ffbe3082bf1239f28d4eb8db80112b17f7 -p 82ae156f6c292e838da7324ed8f111ce904e66fed3478f3caa21a00113356e3ef7009d69d46c4e5348ef7d66ebaf23f5
+# $1 ruta temporal
+# $2 ruta final
+# $3 cantidad de plots
+# -b -> 3390MB ram por defecto
+# -r 2 (threads) por defecto
+createPlot ()
+{
+        echo "Borrando $1..."
+        sleep 5
+        rm -R $1/*
+        echo "Comando 'rm' ejecutado"
+        chia plots create -k 32 -b 5120 -u 128 -r 4 -t $1 -d $2 -n 1 -f tuFarmerKey -p tuPlotKey
+}
+# Bucle infinito
+while :
+do
+        createPlot
+done
 ```
 
-----------------------
+---------------------------------------------
 
 Tenés que cambiar mi farmer key (-f) y pool key (-p) por la tuya.
-Esto es muy importante porque los plots de una cuenta no son compatibles con otras.
+Esto es muy importante porque los plots de una cuenta no son compatibles con otras. 
 
-----------------------
+Por otro lado, aumentar el límite de RAM desde los 3390MB originales, ayudará en alrededor del 15%. HDDs lentos que tardaban +23hrs por plot usando 2 threads y 3390MB de RAM, ahora no pasan de las 20hrs. (15% de mejora, yay!)
+
+---------------------------------------------
 
 
 Después de hacer *chmod +x createPlot*, llamarias al script de esta forma:
@@ -29,4 +53,8 @@ Después de hacer *chmod +x createPlot*, llamarias al script de esta forma:
 
 Si por alguna razón indicaste mal la carpeta temporal, tenés 5 segundos hasta que se efectúe el borrado de los elementos dentro de la carpeta que hayas indicado.
 
+## Plots en cola (param. -n)
+
 Ojo, el parámetro **-n** no supera el uno, porque en mi caso ordenar que se hagan más de un plot (añadiendose a la cola) genera [diversos problemas](https://github.com/Chia-Network/chia-blockchain/issues/3803).
+
+Por esta razón, el bucle *while* infinito va muy bien.
